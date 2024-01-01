@@ -1,5 +1,6 @@
 "use client"
 import {useRouter} from "next/navigation";
+import Filter from "@/app/(main)/board/components/Filter";
 
 const Board = () => {
     const router = useRouter()
@@ -8,12 +9,7 @@ const Board = () => {
     }
     return (
         <div>
-            게시판 페이지입니다.
-            <button
-                className="bg-black text-white w-20 h-10"
-                onClick={onClick}
-            >상세페이지 이동
-            </button>
+            홈, 전체 페이지
         </div>
     );
 };

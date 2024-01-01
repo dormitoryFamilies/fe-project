@@ -2,10 +2,19 @@ import React from 'react';
 
 export default function Header() {
     return (
-        <header className="flex justify-between items-center px-[1.25rem] py-[0.25rem] bg-primary h-[126px]">
-            <Logo/>
-            <div className="text-white">기숙사 식구들</div>
-            <div className="text-white">양진재</div>
+        <header className="
+            flex
+            justify-between
+            items-center
+            px-[1.25rem]
+            py-[0.25rem]
+            bg-primary
+            h-[100px]
+            ">
+            <div className="flex gap-x-2">
+                <Logo/>
+                <div className="text-white">양진재</div>
+            </div>
             <AlarmIcon/>
         </header>
     );
