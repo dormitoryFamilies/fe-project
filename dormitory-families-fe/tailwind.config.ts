@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -7,67 +7,44 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    screens: {
-      //화면 사이즈
-      md: '375px',
-    },
     colors: {
       // Brand colors
-      primary: "#E70050",
-      second: "#FFAEB8",
+      primary: '#E70050',
+      primaryMid: '#FF7E8D',
+      primaryLight: '#FFF9FA',
+
+      //secondary color
+      secondary: '#FFE8DE',
 
       // Particular colors
-      point: "#FF5449",
+      point: '#FF6A3B',
+
+      //background color
+      background: '#FFFDFD',
 
       // Achromatic colors
-      black: "#191919",
-      gray4: "#4F4F4F",
-      gray3: "#767676",
-      gray2: "#999999",
-      gray1: "#DBDBDB",
-      gray0: "#F4F4F4",
-      white: "#FFFFFF",
+      black: '#191919',
+      gray5: '#727375',
+      gray4: '#9E9FA1',
+      gray3: '#BEBEBE',
+      gray2: '#CBCCCE',
+      gray1: '#E4E5E7',
+      gray0: '#F4F5F7',
+      white: '#FFFFFF',
+      blue: '#6283FD',
 
       // 그 외 추가 컬러
       // ...
     },
     fontSize: {
-      //헤더 사이즈
-      header1: "64px",
-
-      //타이틀 사이즈
-      title1: "32px", // 대 타이틀
-      title2: "24px", // 중 타이틀
-      title3: "20px", // 소 타이틀 2
-      title4: "18px", // 소 타이틀
-      title5: "16px", // 본문 2
-
-      //서브타이틀 사이즈
-      subtitle1: "15px", // 본문
-      subtitle2: "13px", // 작은
-
-      //body 사이즈
-      body1: "16px",
-      body2: "14px",
-
-      //button 사이즈
-      button: "14px"
-    },
-    extend: {
-      spacing: {
-        main: "1920px",
-        home: "1434px",
-        home2: "940px",
-        side: "486px",
-      },
-    },
-    minWidth: {
-      main: "1920px",
-      home: "1434px",
-      home2: "940px",
-      side: "486px",
+      //폰트 사이즈
+      h1: '24px', // Head 1
+      h2: '20px', // Title 1
+      h3: '18px', // Title 2, 3
+      h4: '16px', // Title 4, 5, SubTitle 1, Body1
+      h5: '14px', // SubTitle 2, Body2, Button
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;
