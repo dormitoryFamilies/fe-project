@@ -18,19 +18,20 @@ const Header = () => {
 
     return (
         <div>
-            <header className="bg-white flex items-center justify-evenly gap-x-16">
-                <Logo/>
+            <header className="h-[52px] fixed top-0 bg-white flex items-center justify-evenly w-full">
+                <Logo className="absolute left-5"/>
                 <div
-                    className="flex items-center gap-x-1"
+                    className="absolute left-50 right-50 flex items-center gap-x-1"
                     onClick={()=> {dropDownOnClick()}}
                 >
                     <div className="text-h2 font-bold z-20">{selectedDorm}</div>
                     { isDropDownClick ? <DropDownOnIcon /> : <DropDownOffIcon /> }
                 </div>
-                <AlarmIcon/>
+                <AlarmIcon className="absolute right-5"/>
             </header>
             { isDropDownClick ? <DropDownDormModal /> : null}
         </div>
+
     );
 }
 
