@@ -1,17 +1,24 @@
 'use client'
 import HomeMenuFilter from "@/components/home/HomeMenuFilter";
+import {useRecoilState} from "recoil";
+import {homeMenuFilterState} from "@/recoil/atom";
+import {ALL_MENU} from "@/utils/home/AllMenu";
 
 const HomeMenu = () => {
+    const [state, setState] = useRecoilState<'breakfast' | 'lunch' | 'dinner'>(homeMenuFilterState);
+
     return (
         <div className="flex flex-col mt-3 pb-4 gap-y-3 items-center rounded-[32px] border border-secondary">
             <HomeMenuFilter />
             {/*TODO: 데이터 추가 */}
             <div className="flex flex-col gap-y-3 items-center text-h4">
-                <div>작곡밥</div>
-                <div>근대 된장국</div>
-                <div>돈육 두부 두루치기</div>
-                <div>감자채 피망볶음</div>
-                <div>김치</div>
+                {
+                    ALL_MENU[state].map((menu)=>{
+                        return(
+                                <div>{menu}</div>
+                        )
+                    })
+                }
             </div>
             <div className="flex text-gray4 text-h5 gap-x-5">
                 <div className="flex items-center gap-x-1">

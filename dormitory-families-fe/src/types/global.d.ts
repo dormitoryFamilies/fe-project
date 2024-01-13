@@ -18,3 +18,10 @@ export interface PostList {
     title: string;
     date: string;
 }
+
+//식단 메뉴
+export interface MenuList {
+    breakfast: string[];
+    lunch: string[];
+    dinner: string[];
+}

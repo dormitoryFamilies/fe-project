@@ -13,3 +13,9 @@ export const selectedDormitory = atom({
     key: 'selectedDormitory',
     default: '양진재',
 });
+
+//
+export const homeMenuFilterState = atom({
+    key: 'homeMenuFilterState',
+    default: 'breakfast',
+});

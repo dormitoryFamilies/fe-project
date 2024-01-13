@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <div className="bg-background mx-5">
             <div className="h-[33px]"/>
-            <div className="flex flex-col gap-y-[60px]">
+            <div className="flex flex-col gap-y-8">
                 <div>
                     <div className="flex justify-between">
                         <div className="text-black text-h3 font-bold">오늘의 메뉴</div>
