@@ -4,3 +4,8 @@ export interface MenuList {
     name: string;
     path: string;
 }
+
+export interface DormList {
+    id: number;
+    name: string;
+}

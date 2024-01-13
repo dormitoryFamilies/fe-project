@@ -1,15 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
+import DropDownDorm from "@/components/common/DropDownDormModal";
+import {useRecoilState} from "recoil";
+import {DropDownClick, selectedDormitory} from "@/recoil/atom";
+import DropDownDormModal from "@/components/common/DropDownDormModal";
 
-const Header = () =>{
+const Header = () => {
+    //드롭다운 메뉴를 보이도록(or 보이지 않도록) 하는 state
+    const [isDropDownClick, setIsDropDownClick] = useRecoilState<boolean>(DropDownClick);
+
+    //드롭다운 메뉴를 보이도록(or 보이지 않도록) 하는 함수
+    const dropDownOnClick = () => {
+        setIsDropDownClick(!isDropDownClick)
+    }
+    // 선택된 기숙사 state
+    const [selectedDorm, setSelectedDorm] = useRecoilState<string>(selectedDormitory)
+
+
     return (
-            <header className="flex items-center justify-evenly gap-x-16">
+        <div>
+            <header className="bg-white flex items-center justify-evenly gap-x-16">
                 <Logo/>
-                <div className="flex items-center gap-x-1">
-                    <div className="text-h2 font-bold">양진재</div>
-                    <DropDownIcon/>
+                <div
+                    className="flex items-center gap-x-1"
+                    onClick={()=> {dropDownOnClick()}}
+                >
+                    <div className="text-h2 font-bold z-20">{selectedDorm}</div>
+                    { isDropDownClick ? <DropDownOnIcon /> : <DropDownOffIcon /> }
                 </div>
                 <AlarmIcon/>
             </header>
+            { isDropDownClick ? <DropDownDormModal /> : null}
+        </div>
     );
 }
 
@@ -127,7 +148,7 @@ function AlarmIcon(props: React.SVGProps<SVGSVGElement>) {
         </svg>
     );
 }
-function DropDownIcon(props: React.SVGProps<SVGSVGElement>) {
+function DropDownOffIcon(props: React.SVGProps<SVGSVGElement>) {
     return (
         <svg
             width={10}
@@ -138,6 +159,23 @@ function DropDownIcon(props: React.SVGProps<SVGSVGElement>) {
         >
             <path
                 d="M4.509 5.293L.923 1.707C.293 1.077.74 0 1.63 0h7.172c.89 0 1.337 1.077.707 1.707L5.923 5.293a1 1 0 01-1.414 0z"
+                fill="#191919"
+            />
+        </svg>
+    );
+}
+
+function DropDownOnIcon(props: React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg
+            width={10}
+            height={6}
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <path
+                d="M5.916.707l3.586 3.586c.63.63.184 1.707-.707 1.707H1.623C.733 6 .286 4.923.916 4.293L4.502.707a1 1 0 011.414 0z"
                 fill="#191919"
             />
         </svg>
